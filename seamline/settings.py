@@ -108,19 +108,16 @@ WSGI_APPLICATION = 'seamline.wsgi.application'
 
 environment = os.environ.get('ENVIRONMENT', 'DEVELOPMENT')
 
-if environment == 'PRODUCTION':
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres.fgaglfqzxkgsrbmcshuw',
-            'PASSWORD': 'edward.arthur',
-            'HOST': 'aws-0-us-west-1.pooler.supabase.com',
-            'PORT': '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('SUPABASE_URL'),
+        'PORT': '5432',
+        'USER': os.environ.get('SUPABASE_USER'),
+        'PASSWORD': os.environ.get('SUPABASE_PASSWORD'),
+        'NAME': os.environ.get('SUPABASE_DB')
     }
+}
 
 
 # Password validation
