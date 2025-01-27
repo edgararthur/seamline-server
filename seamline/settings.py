@@ -65,7 +65,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhitenoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -111,11 +111,11 @@ environment = os.environ.get('ENVIRONMENT', 'DEVELOPMENT')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('SUPABASE_URL'),
+        'NAME': 'postgres',
+        'USER': 'postgres.fgaglfqzxkgsrbmcshuw',
+        'PASSWORD': 'edward.arthur',
+        'HOST': 'aws-0-us-west-1.pooler.supabase.com',
         'PORT': '5432',
-        'USER': os.environ.get('SUPABASE_USER'),
-        'PASSWORD': os.environ.get('SUPABASE_PASSWORD'),
-        'NAME': os.environ.get('SUPABASE_DB')
     }
 }
 
