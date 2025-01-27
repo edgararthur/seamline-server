@@ -1,12 +1,16 @@
 {
   "builds": [{
     "src": "seamline/wsgi.py",
-    "use": "@vercel/python"
+    "use": "@vercel/python",
+    "config": {
+      "maxLamdaSize": "15mb",
+      "runtime": "python3.9"
+    }
   }],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/seamline/wsgi.py"
+      "dest": "seamline/wsgi.py"
     }
   ]
 }
