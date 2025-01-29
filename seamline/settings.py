@@ -30,7 +30,11 @@ SECRET_KEY = 'django-insecure-_4e3hn7a(=ae^v%8igj$h*3p2urk6#7h7+omt=h4_ss!-t-n(k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://seamlineluxe.vercel.app',
+    'http://seamlineluxe.vercel.app',
+    '.vercel.app'
+]
 
 
 # Application definition
