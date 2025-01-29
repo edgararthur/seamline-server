@@ -12,5 +12,9 @@
       "src": "/(.*)",
       "dest": "seamline/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "seamline.settings",
+    "PYTHONUNBUFFERED": "1"
+  }
 }
